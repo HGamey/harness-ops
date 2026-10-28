@@ -1,5 +1,7 @@
 # harness-ops
 
+> **已合并进 [HGamey/hgamey](https://github.com/HGamey/hgamey)（2026-10-28 起），本仓库只读归档。** 代码与完整历史在 hgamey 的 `harness-ops/` 目录，旧提交号到新提交号的对照见 `history/harness-ops.commit-map`；尚未并入 main 的分支已导入为 hgamey 的 `harness-ops/<原分支名>`（有冲突的为 `archive/harness-ops/<原分支名>`），见 `history/branches.md`。新的提交、问题和部署都在 hgamey 进行。
+
 外部 Agent 使用远程真机的节点服务、客户端和网页；共享目标、方向、证据与异步协助独立于聊天工具，GOL 可选。参考 [研究 skill](skills/hgamey-research/SKILL.md) 接续研究，网页与 CLI/API 同等优先。
 
 | 路径 | 作用 |
