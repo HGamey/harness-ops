@@ -1,5 +1,7 @@
 # harness-ops
 
+> **已合并进 [HGamey/hgamey](https://github.com/HGamey/hgamey)（2026-10-28 起），本仓库只读归档。** 代码与完整历史在 hgamey 的 `harness-ops/` 目录，旧提交号到新提交号的对照见 `history/harness-ops.commit-map`；尚未并入 main 的分支已导入为 hgamey 的 `harness-ops/<原分支名>`（有冲突的为 `archive/harness-ops/<原分支名>`），见 `history/branches.md`。新的提交、问题和部署都在 hgamey 进行。
+
 外部 Agent 使用远程真机的节点服务、客户端和网页；共享目标、方向、证据与异步协助独立于聊天工具，GOL 可选。参考 [研究 skill](skills/hgamey-research/SKILL.md) 接续研究，网页与 CLI/API 同等优先。
 
 | 路径 | 作用 |
@@ -7,7 +9,6 @@
 | `node/node_service.py` | 节点上的 HTTP 服务：接任务、跑 phonefarm / game_opt_loop、回传输出 |
 | `node/pf-node` | 开发机上的客户端，把命令派到一台节点执行 |
 | `node/pf-fleet` | 共享节点目录；显式 legacy 注册表可选空闲节点，迁移入口暂不支持 |
-| `node/pf-node-deploy`、`node/update_node.sh` | 让节点从 GitHub 拉代码、编译、更新 |
 | `node/dash.py`、`node/dash_goals.py`、`node/dash_static/` | 网页任务、游戏、研究协助、节点目录与控制；查看和操作分别授权 |
 | `node/node_remote.py`、`skills/hgamey-remote/` | 远程调试：个人操作员令牌接管设备（HTTP `/remote`、MCP `/remote/mcp`、网页 `/dash/control`），用法见 skill |
 | `node/run_node.sh` | 在节点上前台运行节点服务和 cloudflared 隧道 |
@@ -27,7 +28,6 @@ node/pf-node jobs --query Doom                         # 任意任务检索、�
 node/pf-node artifacts <job-id>                        # 列举输出；用 out <job-id> <path> 下载
 node/pf-node results list --game-id doom3               # 显式结果索引；register/import 登记已有小报告
 node/pf-node results search --node lab-a --node lab-b   # 目录绑定的远端索引；各自分页，详情和原件回源
-node/pf-node-deploy --restart                          # 运维操作：更新并重启，非上手必需
 ```
 
 节点 URL/凭据必须显式设置；TOKEN 与 TOKEN_FILE 环境变量不可同时设置，`--token-file` 可显式覆盖。凭据不进仓库。
